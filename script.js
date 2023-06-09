@@ -15,10 +15,8 @@ $(document).ready(function() {
   // useful when saving the description in local storage?
 
   $(".saveBtn").on("click", function() {
-    // console.log("saveBtn")
-    var userInput = $(this).siblings(".description").val()
-    console.log(userInput)
-    var id = $(this).parent().attr("id")
+    var userInput = $(this).siblings(".description").val();
+    var id = $(this).parent().attr("id");
     localStorage.setItem(id, userInput);
   });
 
@@ -30,26 +28,23 @@ $(document).ready(function() {
 
   for (var i = 0; i < allHours.length; i++){
 
-    var currentTimeElement = $(allHours[i])
-    console.log(currentTime)
-    console.log(currentTimeElement)
-    var currentTimeBlock = parseInt($(allHours[i]).attr("id").split("-")[1])
-    console.log(currentTimeBlock)
+    var currentTimeElement = $(allHours[i]);
+    var currentTimeBlock = parseInt($(allHours[i]).attr("id").split("-")[1]);
 
     if (currentTimeBlock < currentTime) {
-      currentTimeElement.addClass("past")
-      currentTimeElement.removeClass("present")
-      currentTimeElement.removeClass("future")
+      currentTimeElement.addClass("past");
+      currentTimeElement.removeClass("present");
+      currentTimeElement.removeClass("future");
   
     } else if (currentTimeBlock > currentTime) {
-      currentTimeElement.addClass("future")
-      currentTimeElement.removeClass("present")
-      currentTimeElement.removeClass("past")
+      currentTimeElement.addClass("future");
+      currentTimeElement.removeClass("present");
+      currentTimeElement.removeClass("past");
 
     } else if (currentTimeBlock == currentTime) {
-      currentTimeElement.addClass("present")
-      currentTimeElement.removeClass("past")
-      currentTimeElement.removeClass("future")
+      currentTimeElement.addClass("present");
+      currentTimeElement.removeClass("past");
+      currentTimeElement.removeClass("future");
     }
 }
 
@@ -58,37 +53,28 @@ $(document).ready(function() {
   // attribute of each time-block be used to do this?
 
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
-  console.log("hour9")
 
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
-  console.log("hour10")
 
   $("#hour-11 .description").val(localStorage.getItem("hour-11"));
-  console.log("hour11")
 
   $("#hour-12 .description").val(localStorage.getItem("hour-12"));
-  console.log("hour12")
 
   $("#hour-13 .description").val(localStorage.getItem("hour-13"));
-  console.log("hour13")
 
   $("#hour-14 .description").val(localStorage.getItem("hour-14"));
-  console.log("hour14")
 
   $("#hour-15 .description").val(localStorage.getItem("hour-15"));
-  console.log("hour15")
 
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
-  console.log("hour16")
 
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
-  console.log("hour17")
 
 
   // TODO: Add code to display the current date in the header of the page.
 
  $(document).ready(function(){
-  var currentDay = dayjs().format("MMMM D, YYYY, h:mm a");
+  var currentDay = dayjs().format("dddd, MMM D, YYYY, h:mm a");
   $("#currentDay").text(currentDay);
 })
 });
