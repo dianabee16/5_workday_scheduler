@@ -10,7 +10,7 @@ N/A
 N/A
 
 ## Links
-Used class material for reference, as well as searches on: https://www.google.com
+Used class material for reference, as well as searches on: [Google](https://www.google.com)
 
 ## Deployed application
 [Work Day Scheduler - Live](https://dianabee16.github.io/5_workday_scheduler)
